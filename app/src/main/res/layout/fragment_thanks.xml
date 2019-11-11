@@ -34,7 +34,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/thanks"
-        tools:text="Thank you for purchasing %1$s. You will soon get an email confirming the order. Your product will be shipped within 4-5 days" />
+        tools:text="@string/thank_you_message" />
 
     <Button
         android:id="@+id/continue_shopping"
