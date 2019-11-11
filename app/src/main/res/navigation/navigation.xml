@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/home">
+    <fragment
+        android:id="@+id/home"
+        android:name="com.example.fragmentnavigation.ListFragment"
+        android:label="fragment_list"
+        tools:layout="@layout/fragment_list" >
+        <argument
+            android:name="product_name"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_home_to_detail"
+            app:destination="@id/detail" />
+    </fragment>
+    <fragment
+        android:id="@+id/detail"
+        android:name="com.example.fragmentnavigation.DetailFragment"
+        android:label="fragment_detail"
+        tools:layout="@layout/fragment_detail" >
+        <action
+            android:id="@+id/action_detail_to_checkout2"
+            app:destination="@id/checkout" />
+    </fragment>
+    <fragment
+        android:id="@+id/checkout"
+        android:name="com.example.fragmentnavigation.CheckoutFragment"
+        android:label="fragment_checkout"
+        tools:layout="@layout/fragment_checkout" >
+        <action
+            android:id="@+id/action_checkout_to_thanksFragment"
+            app:destination="@id/thanksFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/thanksFragment"
+        android:name="com.example.fragmentnavigation.ThanksFragment"
+        android:label="fragment_thanks"
+        tools:layout="@layout/fragment_thanks" >
+        <action
+            android:id="@+id/action_thanksFragment_to_home2"
+            app:destination="@id/home"
+            app:popUpTo="@+id/thanksFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+</navigation>
