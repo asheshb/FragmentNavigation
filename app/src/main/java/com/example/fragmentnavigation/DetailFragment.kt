@@ -33,7 +33,7 @@ class DetailFragment : Fragment() {
 
         arguments?.let{
             val args = DetailFragmentArgs.fromBundle(it)
-            product = products.find { args.id == id }
+            product = products.find {args.id == it.id }
         }
 
         product?.let{
