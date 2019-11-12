@@ -24,9 +24,9 @@ class ThanksFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         var product: Product? = null
-        val id = arguments?.getInt("ID")
-        id?.let {
-            product = products.find { it.id == id }
+        arguments?.let{
+            val args = CheckoutFragmentArgs.fromBundle(it)
+            product = products.find { args.id == id }
         }
 
         product?.let{

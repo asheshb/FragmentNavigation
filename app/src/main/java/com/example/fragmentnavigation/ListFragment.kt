@@ -2,11 +2,11 @@ package com.example.fragmentnavigation
 
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.navigation.findNavController
+import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
@@ -29,10 +29,10 @@ class ListFragment : Fragment() {
 
             adapter = ProductAdapter{
 
-                val bundle = Bundle()
-                bundle.putInt("ID", it.id)
-                //findNavController().navigate(R.id.detail, bundle)
-                findNavController().navigate(R.id.action_home_to_detail, bundle)
+//                val bundle = Bundle()
+//                bundle.putInt("ID", it.id)
+//                findNavController().navigate(R.id.action_home_to_detail, bundle)
+                findNavController().navigate(ListFragmentDirections.actionHomeToDetail(it.id))
             }
             setHasFixedSize(true)
         }

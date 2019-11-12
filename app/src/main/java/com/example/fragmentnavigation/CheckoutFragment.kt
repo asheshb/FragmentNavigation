@@ -25,9 +25,9 @@ class CheckoutFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         var product: Product? = null
-        val id = arguments?.getInt("ID")
-        id?.let {
-            product = products.find { it.id == id }
+        arguments?.let{
+            val args = CheckoutFragmentArgs.fromBundle(it)
+            product = products.find { args.id == id }
         }
 
         product?.let{
@@ -39,9 +39,7 @@ class CheckoutFragment : Fragment() {
                 product_image.setImageResource(imageId)
 
                 checkout.setOnClickListener {
-                    val bundle = Bundle()
-                    bundle.putInt("ID", this.id)
-                    findNavController().navigate(R.id.action_checkout_to_thanks, bundle)
+                    findNavController().navigate(CheckoutFragmentDirections.actionCheckoutToThanks(this.id))
                 }
             }
         }
