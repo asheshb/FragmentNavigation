@@ -27,7 +27,7 @@ class CheckoutFragment : Fragment() {
         var product: Product? = null
         arguments?.let{
             val args = CheckoutFragmentArgs.fromBundle(it)
-            product = products.find { args.id == id }
+            product = products.find {args.id == it.id }
         }
 
         product?.let{
