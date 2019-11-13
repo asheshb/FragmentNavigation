@@ -24,7 +24,11 @@
         tools:layout="@layout/fragment_detail" >
         <action
             android:id="@+id/action_detail_to_checkout"
-            app:destination="@id/checkout" />
+            app:destination="@id/checkout"
+            app:enterAnim="@anim/fade_in"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/slide_in_from_left"
+            app:popExitAnim="@anim/slide_out_to_right" />
         <argument
             android:name="id"
             app:argType="integer" />
@@ -36,7 +40,11 @@
         tools:layout="@layout/fragment_checkout" >
         <action
             android:id="@+id/action_checkout_to_thanks"
-            app:destination="@id/thanks" />
+            app:destination="@id/thanks"
+            app:enterAnim="@anim/fade_in"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/slide_in_from_left"
+            app:popExitAnim="@anim/slide_out_to_right" />
         <argument
             android:name="id"
             app:argType="integer" />
@@ -49,6 +57,10 @@
         <action
             android:id="@+id/action_thanks_to_home"
             app:destination="@+id/home"
+            app:enterAnim="@anim/fade_in"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/slide_in_from_left"
+            app:popExitAnim="@anim/slide_out_to_right"
             app:popUpTo="@+id/home"
             app:popUpToInclusive="true" />
         <argument
