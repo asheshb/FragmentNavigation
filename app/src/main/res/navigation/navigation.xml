@@ -12,10 +12,10 @@
         <action
             android:id="@+id/action_home_to_detail"
             app:destination="@id/detail"
-            app:enterAnim="@anim/fade_in"
-            app:exitAnim="@anim/fade_out"
-            app:popEnterAnim="@anim/slide_in_from_left"
-            app:popExitAnim="@anim/slide_out_to_right" />
+            app:enterAnim="@anim/slide_in_from_right"
+            app:exitAnim="@anim/slide_out_to_left"
+            app:popEnterAnim="@anim/fade_in"
+            app:popExitAnim="@anim/fade_out" />
     </fragment>
     <fragment
         android:id="@+id/detail"
@@ -25,9 +25,9 @@
         <action
             android:id="@+id/action_detail_to_checkout"
             app:destination="@id/checkout"
-            app:enterAnim="@anim/fade_in"
-            app:exitAnim="@anim/fade_out"
-            app:popEnterAnim="@anim/slide_in_from_left"
+            app:enterAnim="@anim/slide_in_from_right"
+            app:exitAnim="@anim/slide_out_to_left"
+            app:popEnterAnim="@anim/fade_in"
             app:popExitAnim="@anim/fade_out" />
         <argument
             android:name="id"
@@ -41,10 +41,12 @@
         <action
             android:id="@+id/action_checkout_to_thanks"
             app:destination="@id/thanks"
-            app:enterAnim="@anim/fade_in"
-            app:exitAnim="@anim/fade_out"
-            app:popUpTo="@+id/checkout"
-            app:popUpToInclusive="true" />
+            app:enterAnim="@anim/slide_in_from_right"
+            app:exitAnim="@anim/slide_out_to_left"
+            app:popEnterAnim="@anim/fade_in"
+            app:popExitAnim="@anim/fade_out"
+            app:popUpTo="@+id/detail"
+            app:popUpToInclusive="false" />
         <argument
             android:name="id"
             app:argType="integer" />
@@ -57,8 +59,10 @@
         <action
             android:id="@+id/action_thanks_to_home"
             app:destination="@+id/home"
-            app:enterAnim="@anim/fade_in"
-            app:exitAnim="@anim/fade_out"
+            app:enterAnim="@anim/slide_in_from_right"
+            app:exitAnim="@anim/slide_out_to_left"
+            app:popEnterAnim="@anim/fade_in"
+            app:popExitAnim="@anim/fade_out"
             app:popUpTo="@+id/home"
             app:popUpToInclusive="true" />
         <argument
