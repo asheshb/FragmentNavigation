@@ -30,8 +30,8 @@
         <action
             android:id="@+id/action_checkout_to_thanks"
             app:destination="@id/thanks"
-            app:popUpTo="@+id/checkout"
-            app:popUpToInclusive="true" />
+            app:popUpTo="@+id/detail"
+            app:popUpToInclusive="false" />
     </fragment>
     <fragment
         android:id="@+id/thanks"
